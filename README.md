@@ -33,4 +33,4 @@ Feel free to open issues or pull requests for any suggestions or improvements!
 
 - Website: [Alnaagi.ly](alnaagi.ly)
 - Twitter: [@Alnaagi.ly](x.com/alnaagi.ly)
-- LinkedIn: [alnaagi](https://www.linkedin.com/in/alnaagi/)
+- LinkedIn: [Alnaagi](https://www.linkedin.com/in/alnaagi/)

@@ -6,14 +6,15 @@ class NavigationbarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text('Mohamed Alnaagi',
-            style: TextStyle(color: Colors.purple, fontSize: 20)),
+            style: TextStyle(
+                color: Color.fromARGB(255, 103, 80, 164),
+                fontSize: 25,
+                fontWeight: FontWeight.bold)),
         Flexible(
-          flex: 1,
           child: SizedBox(
-            width: 5000,
+            width: 200,
           ),
         ),
         _NavBarItem('About me'),
@@ -36,12 +37,9 @@ class _NavBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      flex: 1,
-      child: Text(
-        title,
-        style: TextStyle(fontSize: 18, color: Colors.white),
-      ),
+    return Text(
+      title,
+      style: TextStyle(fontSize: 18, color: Colors.white),
     );
   }
 }
