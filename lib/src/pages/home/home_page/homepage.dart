@@ -13,7 +13,15 @@ class HomePage extends StatelessWidget {
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: CenteredViewpage(
-            child: Column(children: [NavigationbarWidget(), IntroPage()]),
+            child: Flexible(
+              child: Column(children: [
+                NavigationbarWidget(),
+                SizedBox(
+                  height: 20,
+                ),
+                IntroPage()
+              ]),
+            ),
           ),
         ));
   }

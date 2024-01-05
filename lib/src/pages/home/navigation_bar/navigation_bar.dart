@@ -10,9 +10,10 @@ class NavigationbarWidget extends StatelessWidget {
       children: [
         Text('Mohamed Alnaagi',
             style: TextStyle(color: Colors.purple, fontSize: 20)),
-        Expanded(
+        Flexible(
+          flex: 1,
           child: SizedBox(
-            width: 100,
+            width: 5000,
           ),
         ),
         _NavBarItem('About me'),
@@ -36,6 +37,7 @@ class _NavBarItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Flexible(
+      flex: 1,
       child: Text(
         title,
         style: TextStyle(fontSize: 18, color: Colors.white),

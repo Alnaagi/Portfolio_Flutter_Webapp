@@ -7,10 +7,10 @@ class CenteredViewpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       alignment: Alignment.center,
       child: ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: 5000), child: child),
+          constraints: BoxConstraints(maxWidth: 2000), child: child),
     );
   }
 }
