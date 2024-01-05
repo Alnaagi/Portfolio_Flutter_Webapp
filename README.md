@@ -21,7 +21,7 @@ This responsive Flutter web app serves as my personal portfolio, highlighting my
 
 ## Setup
 
-1. Clone this repository: `git clone https://github.com/[alnaagi]/[your-repo-name].git`
+1. Clone this repository: `git clone https://github.com/Alnaagi/portfolio_flutter_webapp.git`
 2. Install dependencies: `flutter pub get`
 3. Run the app: `flutter run -d chrome`
 
