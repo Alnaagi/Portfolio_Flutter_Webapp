@@ -22,37 +22,36 @@ class IntroPage extends StatelessWidget {
                 "Hello, i'm",
                 style: TextStyle(
                     color: Colors.grey.shade200,
-                    fontSize: screenWidth / 30,
+                    fontSize: screenWidth * 0.08,
                     fontWeight: FontWeight.bold),
               ),
               Text(
                 "Mohamed Alnaagi",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: screenWidth / 20,
+                    fontSize: screenWidth * 0.10,
                     fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 5),
               Text(
                 "cybersecurity enthusiast and a recent CS graduate",
                 style: TextStyle(
-                    color: Colors.grey.shade400,
-                    fontSize: screenWidth / 35,
+                    color: Colors.grey.shade200,
+                    fontSize: screenWidth * .04,
                     fontWeight: FontWeight.w100),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 20),
               Row(
                 children: [
                   Directionality(
                     textDirection: TextDirection.rtl,
                     child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                          foregroundColor: Color.fromARGB(255, 117, 98, 224),
                           fixedSize: Size(120, 45),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0))),
                       onPressed: () => launchUrlString(
-                          'https://drive.google.com/file/d/1JyKMwYImeCDgAhfWqXFYY93_duY_onKG/view?usp=sharing'),
+                          'https://drive.google.com/file/d/1O3BoxlM8r89Y0deWCN4hMdK9Jl0EGTiH/view?usp=sharing'),
                       label: Text('My CV',
                           style: TextStyle(
                               fontSize: 12, fontWeight: FontWeight.bold)),
@@ -80,21 +79,21 @@ class IntroPage extends StatelessWidget {
               ),
             ],
           ),
-          Expanded(
-              child: SizedBox(
-            width: 200,
-          )),
-          Column(
-            children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Image.asset('assets/Ellipse.png', width: screenWidth * .25),
-                  Image.asset('assets/me.png', width: screenWidth * .20),
-                ],
-              ),
-            ],
-          ),
+          // Expanded(
+          //     child: SizedBox(
+          //   width: 200,
+          // )),
+          // Column(
+          //   children: [
+          //     Stack(
+          //       alignment: Alignment.center,
+          //       children: [
+          //         Image.asset('assets/Ellipse.png', width: screenWidth * .25),
+          //         Image.asset('assets/me.png', width: screenWidth * .20),
+          //       ],
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );

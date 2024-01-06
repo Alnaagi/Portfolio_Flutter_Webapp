@@ -20,13 +20,13 @@ class HomePage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            NavigationbarWidget(),
+            //NavigationbarWidget(),
             SizedBox(
-              height: 10,
+              height: 50,
             ),
             IntroPage(),
             AboutMePage(),
-            MyExperiencespage(),
+
             FooterPage()
           ],
         ),
