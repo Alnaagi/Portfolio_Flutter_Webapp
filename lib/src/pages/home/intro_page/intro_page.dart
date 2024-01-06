@@ -47,6 +47,8 @@ class IntroPage extends StatelessWidget {
                     textDirection: TextDirection.rtl,
                     child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: Color.fromARGB(255, 117, 98, 200),
                           fixedSize: Size(120, 45),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0))),
@@ -54,7 +56,7 @@ class IntroPage extends StatelessWidget {
                           'https://drive.google.com/file/d/1O3BoxlM8r89Y0deWCN4hMdK9Jl0EGTiH/view?usp=sharing'),
                       label: Text('My CV',
                           style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.bold)),
+                              fontSize: 13, fontWeight: FontWeight.bold)),
                       icon: Icon(Icons.person),
                     ),
                   ),
