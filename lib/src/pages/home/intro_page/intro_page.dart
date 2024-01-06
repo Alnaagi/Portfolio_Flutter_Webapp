@@ -48,7 +48,7 @@ class IntroPage extends StatelessWidget {
                     child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.white,
-                          foregroundColor: Color.fromARGB(255, 117, 98, 200),
+                          foregroundColor: Color.fromARGB(255, 65, 55, 111),
                           fixedSize: Size(120, 45),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0))),
