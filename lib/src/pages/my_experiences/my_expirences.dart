@@ -10,64 +10,118 @@ class MyExperiencespage extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-          color: Color.fromARGB(255, 26, 26, 41),
-          borderRadius: BorderRadiusDirectional.circular(20.0)),
-      height: screenHeight,
+        color: Color.fromARGB(255, 26, 26, 41),
+      ),
       width: screenWidth,
       child: Padding(
-        padding: const EdgeInsets.only(left: 40, right: 10),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          SizedBox(
-            height: 50,
-          ),
-          Text(
-            "My Experiences",
-            style: TextStyle(
-                color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
-          ),
-          Row(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadiusDirectional.circular(20.0)),
-                height: 200,
-                width: 200,
+        padding: const EdgeInsets.only(left: 20, right: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "My Experiences",
+              style: TextStyle(
+                  color: Colors.grey.shade200,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold),
+            ),
+            // Row(
+            //   children: [
+            //     Container(
+            //       decoration: BoxDecoration(
+            //           color: Colors.white,
+            //           borderRadius: BorderRadiusDirectional.circular(20.0)),
+            //       height: 200,
+            //       width: 200,
+            //     ),
+            //     SizedBox(
+            //       width: 10,
+            //     ),
+            //     Container(
+            //       decoration: BoxDecoration(
+            //           color: Colors.white,
+            //           borderRadius: BorderRadiusDirectional.circular(20.0)),
+            //       height: 200,
+            //       width: 200,
+            //     ),
+            //     SizedBox(
+            //       width: 10,
+            //     ),
+            //     Container(
+            //       decoration: BoxDecoration(
+            //           color: Colors.white,
+            //           borderRadius: BorderRadiusDirectional.circular(20.0)),
+            //       height: 200,
+            //       width: 200,
+            //     ),
+            //     SizedBox(
+            //       width: 10,
+            //     ),
+            //     Container(
+            //       decoration: BoxDecoration(
+            //           color: Colors.white,
+            //           borderRadius: BorderRadiusDirectional.circular(20.0)),
+            //       height: 200,
+            //       width: 200,
+            //     ),
+            //   ],
+            // ),
+            AspectRatio(
+              aspectRatio: 1,
+              child: SizedBox(
+                width: double.infinity,
+                child: GridView.builder(
+                  itemCount: 4,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2),
+                  itemBuilder: (context, index) {
+                    return MyBox();
+                  },
+                ),
               ),
-              SizedBox(
-                width: 10,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadiusDirectional.circular(20.0)),
-                height: 200,
-                width: 200,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadiusDirectional.circular(20.0)),
-                height: 200,
-                width: 200,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadiusDirectional.circular(20.0)),
-                height: 200,
-                width: 200,
-              ),
-            ],
-          )
-        ]),
+            ),
+            // Expanded(
+            //   child: ListView.builder(
+            //     itemCount: 4,
+            //     itemBuilder: (context, index) {
+            //       return const MyTile();
+            //     },
+            //   ),
+            // ),
+          ],
+        ),
       ),
     );
   }
 }
+
+class MyBox extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: Colors.grey[400],
+        ),
+      ),
+    );
+  }
+}
+
+// class MyTile extends StatelessWidget {
+//   const MyTile({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.all(8.0),
+//       child: Container(
+//         height: 78,
+//         decoration: BoxDecoration(
+//             borderRadius: BorderRadius.circular(8), color: Colors.grey[200]),
+//       ),
+//     );
+//   }
+// }

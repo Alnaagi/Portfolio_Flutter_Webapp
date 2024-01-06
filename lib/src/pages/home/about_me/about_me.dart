@@ -8,38 +8,53 @@ class AboutMePage extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Container(
-        decoration: BoxDecoration(
-            color: Color.fromARGB(255, 26, 26, 41),
-            borderRadius: BorderRadiusDirectional.circular(20.0)),
-        height: 220,
-        width: screenWidth,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 40, right: 10),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return Container(
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 26, 26, 41),
+      ),
+      width: screenWidth,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20, right: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
             SizedBox(
-              height: 50,
+              height: 10,
             ),
             Text(
               "feel free to read this:",
               style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
+                  color: Colors.grey.shade200,
+                  fontSize: 28,
                   fontWeight: FontWeight.bold),
             ),
-            Flexible(
-              child: Text(
-                "Hi, my name is Mohamed Alnaagi, I am a highly motivated Cybersecurity enthusiast and a recent CS graduate with a strong desire to learn & grow, especially in Cybersecurity. For my graduation project, I developed an app using the Flutter framework and Firebase database, which helped me gain experience in software development. ",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.normal),
-              ),
+            Row(
+              children: [
+                Flexible(
+                  flex: 100,
+                  child: Container(
+                    width: 2000,
+                    child: Text(
+                      "Hi, my name is Mohamed Alnaagi, I am a highly motivated Cybersecurity enthusiast and a recent CS graduate with a strong desire to learn & grow, especially in Cybersecurity. For my graduation project, I developed an app using the Flutter framework and Firebase database, which helped me gain experience in software development. ",
+                      style: TextStyle(
+                          color: Colors.grey.shade400,
+                          fontSize: 18,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ),
+                ),
+                // Expanded(
+                //   flex: 10,
+                //   child: Container(
+                //     decoration: BoxDecoration(
+                //       color: Color.fromARGB(255, 26, 26, 41),
+                //     ),
+                //     width: 10,
+                //   ),
+                // ),
+              ],
             ),
-          ]),
+          ],
         ),
       ),
     );

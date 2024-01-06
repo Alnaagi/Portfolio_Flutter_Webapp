@@ -5,28 +5,34 @@ class NavigationbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
-        Text('Mohamed Alnaagi',
-            style: TextStyle(
-                color: Color.fromARGB(255, 103, 80, 164),
-                fontSize: 25,
-                fontWeight: FontWeight.bold)),
-        Flexible(
-          child: SizedBox(
-            width: 200,
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    return Padding(
+      padding: EdgeInsets.only(
+          left: screenWidth * 0.03, right: screenWidth * 0.03, top: 35),
+      child: Row(
+        children: [
+          Text('M.Alnaagi',
+              style: TextStyle(
+                  color: Colors.indigo.shade300,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold)),
+          Expanded(
+            child: SizedBox(
+              width: 18,
+            ),
           ),
-        ),
-        _NavBarItem('About me'),
-        SizedBox(
-          width: 30,
-        ),
-        _NavBarItem('Projects'),
-        SizedBox(
-          width: 30,
-        ),
-        _NavBarItem('Contact me'),
-      ],
+          _NavBarItem('About me'),
+          SizedBox(
+            width: 18,
+          ),
+          _NavBarItem('Projects'),
+          SizedBox(
+            width: 18,
+          ),
+          _NavBarItem('Contact me'),
+        ],
+      ),
     );
   }
 }

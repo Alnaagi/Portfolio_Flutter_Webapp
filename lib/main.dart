@@ -4,8 +4,8 @@ import 'package:portfolio_flutter_webapp/src/pages/home/home_page/homepage.dart'
 void main() {
   runApp(
     const MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: "Mohamed Alnaagi",
-        themeMode: ThemeMode.system,
         home: HomePage()),
   );
 }

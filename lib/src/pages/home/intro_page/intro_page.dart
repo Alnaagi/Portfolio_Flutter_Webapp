@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -9,90 +11,89 @@ class IntroPage extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 20),
+      padding:
+          EdgeInsets.only(left: screenWidth * 0.03, right: screenWidth * 0.03),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Flexible(
-            flex: 3,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "Hello, i'm",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold),
-                ),
-                const Text(
-                  "Mohamed Alnaagi",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 5),
-                const Text(
-                  "cybersecurity enthusiast and a recent CS graduate",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w100),
-                ),
-                SizedBox(height: 5),
-                Row(
-                  children: [
-                    Flexible(
-                      child: Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(
-                              minimumSize: const Size(0, 50),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0))),
-                          onPressed: () {},
-                          label: const Text('About me'),
-                          icon: const Icon(Icons.person),
-                        ),
-                      ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Hello, i'm",
+                style: TextStyle(
+                    color: Colors.grey.shade200,
+                    fontSize: screenWidth / 30,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "Mohamed Alnaagi",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenWidth / 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 5),
+              Text(
+                "cybersecurity enthusiast and a recent CS graduate",
+                style: TextStyle(
+                    color: Colors.grey.shade400,
+                    fontSize: screenWidth / 35,
+                    fontWeight: FontWeight.w100),
+              ),
+              SizedBox(height: 5),
+              Row(
+                children: [
+                  Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                          foregroundColor: Color.fromARGB(255, 117, 98, 224),
+                          fixedSize: Size(120, 45),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0))),
+                      onPressed: () => launchUrlString(
+                          'https://drive.google.com/file/d/1JyKMwYImeCDgAhfWqXFYY93_duY_onKG/view?usp=sharing'),
+                      label: Text('My CV',
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.bold)),
+                      icon: Icon(Icons.person),
                     ),
-                    const SizedBox(width: 30),
-                    Flexible(
-                      child: Directionality(
-                        textDirection: TextDirection.rtl,
-                        child: OutlinedButton.icon(
-                          style: OutlinedButton.styleFrom(
-                              foregroundColor: Colors.white70,
-                              side: const BorderSide(
-                                  color: Color.fromARGB(255, 117, 98, 224)),
-                              minimumSize: const Size(100, 50),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0))),
-                          onPressed: () {},
-                          label: const Text('Projects'),
-                          icon: const Icon(Icons.remove_red_eye),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  SizedBox(width: 15),
+                  Directionality(
+                    textDirection: TextDirection.rtl,
+                    child: OutlinedButton.icon(
+                      style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.white70,
+                          side: BorderSide(
+                              color: Color.fromARGB(255, 117, 98, 224)),
+                          fixedSize: Size(120, 45),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0))),
+                      onPressed: () =>
+                          launchUrlString('https://github.com/Alnaagi'),
+                      label: Text('Projects', style: TextStyle(fontSize: 12)),
+                      icon: Icon(Icons.remove_red_eye),
+                    ),
+                  )
+                ],
+              ),
+            ],
           ),
-          Flexible(
-            flex: 4,
-            child: Column(
-              children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Image.asset('assets/Ellipse.png', width: 400),
-                    Image.asset('assets/me.png', width: 350),
-                  ],
-                ),
-              ],
-            ),
+          Expanded(
+              child: SizedBox(
+            width: 200,
+          )),
+          Column(
+            children: [
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Image.asset('assets/Ellipse.png', width: screenWidth * .25),
+                  Image.asset('assets/me.png', width: screenWidth * .20),
+                ],
+              ),
+            ],
           ),
         ],
       ),
