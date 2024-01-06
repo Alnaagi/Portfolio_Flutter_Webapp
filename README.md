@@ -2,7 +2,7 @@
 
 A Flutter web app showcasing my creative coding skills
 
-**View the live portfolio: [Alnaagi.ly](alnaagi.ly)**
+**View the live portfolio: [Alnaagi.ly](https://portfolio-flutter-webapp.web.app/)**
 
 ## About
 
