@@ -17,24 +17,26 @@ class AboutMePage extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(
-            "feel free to read this:",
-            style: TextStyle(
-                color: Colors.grey.shade200,
-                fontSize: 28,
-                fontWeight: FontWeight.bold),
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0, bottom: 5),
+            child: Text(
+              "feel free to read this:",
+              style: TextStyle(
+                  color: Colors.grey.shade200,
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold),
+            ),
           ),
           Row(
             children: [
               Flexible(
                 flex: 100,
                 child: Container(
-                  width: 2000,
                   child: Text(
                     "Hi, my name is Mohamed Alnaagi, I am a highly motivated Cybersecurity enthusiast with a strong desire to learn & grow in the Tech Field, especially in Cybersecurity. For my graduation project, I developed an app & this Web App using the Flutter framework and Firebase database, which helped me gain experience in software development. ",
                     style: TextStyle(
                         color: Colors.grey.shade300,
-                        fontSize: 18,
+                        fontSize: 15,
                         fontWeight: FontWeight.normal),
                   ),
                 ),

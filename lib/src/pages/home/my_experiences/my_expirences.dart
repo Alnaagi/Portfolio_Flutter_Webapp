@@ -11,12 +11,15 @@ class MyExperiencespage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "My Experiences",
-          style: TextStyle(
-              color: Colors.grey.shade200,
-              fontSize: 30,
-              fontWeight: FontWeight.bold),
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0, bottom: 5),
+          child: Text(
+            "My Experiences",
+            style: TextStyle(
+                color: Colors.grey.shade200,
+                fontSize: 30,
+                fontWeight: FontWeight.bold),
+          ),
         ),
         // Row(
         //   children: [
@@ -60,8 +63,9 @@ class MyExperiencespage extends StatelessWidget {
         //   ],
         // ),
         AspectRatio(
-          aspectRatio: 1,
+          aspectRatio: 1.2,
           child: ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
             itemCount: 1,
             itemBuilder: (context, index) {
               return const MyTile();
@@ -130,7 +134,7 @@ class MyTile extends StatelessWidget {
                 ),
               ],
             ),
-            height: 78,
+            height: 80,
             width: double.infinity,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
@@ -162,7 +166,7 @@ class MyTile extends StatelessWidget {
                 ),
               ],
             ),
-            height: 78,
+            height: 80,
             width: double.infinity,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
@@ -194,7 +198,7 @@ class MyTile extends StatelessWidget {
                 ),
               ],
             ),
-            height: 78,
+            height: 80,
             width: double.infinity,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),

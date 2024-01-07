@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
           children: [
             //NavigationbarWidget(),
             SizedBox(
-              height: 50,
+              height: 40,
             ),
             IntroPage(),
             AboutMePage(),
