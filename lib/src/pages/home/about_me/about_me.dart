@@ -31,7 +31,7 @@ class AboutMePage extends StatelessWidget {
                 child: Container(
                   width: 2000,
                   child: Text(
-                    "Hi, my name is Mohamed Alnaagi, I am a highly motivated Cybersecurity enthusiast and a recent CS graduate with a strong desire to learn & grow, especially in Cybersecurity. For my graduation project, I developed an app using the Flutter framework and Firebase database, which helped me gain experience in software development. ",
+                    "Hi, my name is Mohamed Alnaagi, I am a highly motivated Cybersecurity enthusiast with a strong desire to learn & grow in the Tech Field, especially in Cybersecurity. For my graduation project, I developed an app & this Web App using the Flutter framework and Firebase database, which helped me gain experience in software development. ",
                     style: TextStyle(
                         color: Colors.grey.shade300,
                         fontSize: 18,

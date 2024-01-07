@@ -18,23 +18,25 @@ class IntroPage extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Hello, i'm",
-                style: TextStyle(
-                    color: Colors.grey.shade200,
-                    fontSize: screenWidth * 0.08,
-                    fontWeight: FontWeight.bold),
-              ),
-              Text(
-                "Mohamed Alnaagi",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: screenWidth * 0.10,
-                    fontWeight: FontWeight.bold),
-              ),
+              Image.network(
+                  "https://readme-typing-svg.demolab.com?font=Fira+Code&size=31&duration=4000&pause=700&color=F7F7F7&random=false&width=450&height=100&lines=HELLO+FRIEND!;I'm+Mohamed+Alnaagi;Welcome+To+My+Web+App;Feel+Free+To+Look+Around"),
+              // Text(
+              //   "Hello, i'm",
+              //   style: TextStyle(
+              //       color: Colors.grey.shade200,
+              //       fontSize: screenWidth * 0.08,
+              //       fontWeight: FontWeight.bold),
+              // ),
+              // Text(
+              //   "Mohamed Alnaagi",
+              //   style: TextStyle(
+              //       color: Colors.white,
+              //       fontSize: screenWidth * 0.10,
+              //       fontWeight: FontWeight.bold),
+              // ),
               SizedBox(height: 5),
               Text(
-                "cybersecurity enthusiast and a recent CS graduate",
+                "A cybersecurity enthusiast and a recent CS graduate",
                 style: TextStyle(
                     color: Colors.grey.shade200,
                     fontSize: screenWidth * .04,
