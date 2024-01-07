@@ -60,7 +60,7 @@ class MyExperiencespage extends StatelessWidget {
         //   ],
         // ),
         AspectRatio(
-          aspectRatio: 1.5,
+          aspectRatio: 1,
           child: ListView.builder(
             itemCount: 1,
             itemBuilder: (context, index) {
@@ -114,7 +114,7 @@ class MyTile extends StatelessWidget {
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 50.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: Image(
                     image: AssetImage(
                       'assets/kali.png',
@@ -146,7 +146,7 @@ class MyTile extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                      left: 80.0, top: 10, bottom: 10, right: 38),
+                      left: 40.0, top: 10, bottom: 10, right: 38),
                   child: Image(
                     image: AssetImage(
                       'assets/flutter.png',
@@ -178,7 +178,7 @@ class MyTile extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                      left: 80.0, top: 10, bottom: 10, right: 38),
+                      left: 40.0, top: 10, bottom: 10, right: 38),
                   child: Image(
                     image: AssetImage(
                       'assets/html.png',

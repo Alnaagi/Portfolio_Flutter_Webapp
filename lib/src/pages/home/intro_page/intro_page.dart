@@ -19,7 +19,7 @@ class IntroPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.network(
-                  "https://readme-typing-svg.demolab.com?font=Fira+Code&size=31&duration=4000&pause=700&color=F7F7F7&random=false&width=450&height=100&lines=HELLO+FRIEND!;I'm+Mohamed+Alnaagi;Welcome+To+My+Web+App;Feel+Free+To+Look+Around"),
+                  "https://readme-typing-svg.demolab.com?font=Fira+Code&size=25&duration=4000&pause=700&color=F7F7F7&random=false&width=450&height=100&lines=HELLO+FRIEND!;I'm+Mohamed+Alnaagi;Welcome+To+My+Web+App;Feel+Free+To+Look+Around"),
               // Text(
               //   "Hello, i'm",
               //   style: TextStyle(
@@ -42,7 +42,7 @@ class IntroPage extends StatelessWidget {
                     fontSize: screenWidth * .04,
                     fontWeight: FontWeight.w100),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 15),
               Row(
                 children: [
                   Directionality(
