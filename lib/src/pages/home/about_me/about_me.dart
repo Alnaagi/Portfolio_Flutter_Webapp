@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_webapp/src/pages/my_experiences/my_expirences.dart';
+import 'package:portfolio_flutter_webapp/src/pages/home/my_experiences/my_expirences.dart';
 
 class AboutMePage extends StatelessWidget {
   const AboutMePage({super.key});
