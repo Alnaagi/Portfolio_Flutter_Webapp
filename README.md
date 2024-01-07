@@ -16,7 +16,7 @@ This responsive Flutter web app serves as my personal portfolio, highlighting my
 ## Built with ❤️
 
 - Flutter for cross-platform development
-- [List other relevant technologies, libraries, or plugins]
+- Firebase database
 - A sprinkle of creativity and a dash of espresso ☕️
 
 ## Setup
