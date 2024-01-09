@@ -32,5 +32,5 @@ Feel free to open issues or pull requests for any suggestions or improvements!
 ## Connect with me
 
 - Website: [Alnaagi.ly](https://portfolio-flutter-webapp.web.app/)
-- Twitter: [@Alnaagi.ly](https://x.com/alnaagi.ly)
+- Twitter: [@Malnaagi](https://x.com/malnaagi)
 - LinkedIn: [Alnaagi](https://www.linkedin.com/in/alnaagi/)
