@@ -16,11 +16,6 @@ class NavigationbarWidget extends StatelessWidget {
                   color: Colors.indigo.shade300,
                   fontSize: 18,
                   fontWeight: FontWeight.bold)),
-          Expanded(
-            child: SizedBox(
-              width: 18,
-            ),
-          ),
           _NavBarItem('About me'),
           SizedBox(
             width: 18,

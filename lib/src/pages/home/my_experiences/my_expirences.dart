@@ -1,11 +1,17 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:portfolio_flutter_webapp/src/pages/home/my_experiences/expirences_widget.dart';
 
-class MyExperiencespage extends StatelessWidget {
+class MyExperiencespage extends StatefulWidget {
   MyExperiencespage({super.key});
 
+  @override
+  State<MyExperiencespage> createState() => _MyExperiencespageState();
+}
+
+class _MyExperiencespageState extends State<MyExperiencespage> {
   List listArr = [
     {
       "title": "CyberSecurity",
@@ -28,10 +34,36 @@ class MyExperiencespage extends StatelessWidget {
       "image": "assets/alhadera.png"
     },
   ];
+  late double RESPONSIVE;
+  double mobile = 450;
+  double Desktop = 500;
+
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-
+    late int grid_responsive = 2;
+    late double RESPONSIVE;
+    double mobile = 450;
+    double Desktop = 750;
+    double Fullscreen = MediaQuery.of(context).size.width;
+    var media = MediaQuery.of(context).size;
+    if (media.width > Desktop) {
+      setState(() {
+        grid_responsive = 4;
+        RESPONSIVE = Fullscreen;
+        print("Fullscreen");
+      });
+    } else if (media.width > mobile) {
+      setState(() {
+        grid_responsive = 2;
+        RESPONSIVE = 500;
+        print("Desktop");
+      });
+    } else if (media.width <= Desktop) {
+      setState(() {
+        RESPONSIVE = mobile;
+        print("mobile");
+      });
+    } else {}
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -45,52 +77,12 @@ class MyExperiencespage extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
         ),
-        // Row(
-        //   children: [
-        //     Container(
-        //       decoration: BoxDecoration(
-        //           color: Colors.white,
-        //           borderRadius: BorderRadiusDirectional.circular(20.0)),
-        //       height: 200,
-        //       width: 200,
-        //     ),
-        //     SizedBox(
-        //       width: 10,
-        //     ),
-        //     Container(
-        //       decoration: BoxDecoration(
-        //           color: Colors.white,
-        //           borderRadius: BorderRadiusDirectional.circular(20.0)),
-        //       height: 200,
-        //       width: 200,
-        //     ),
-        //     SizedBox(
-        //       width: 10,
-        //     ),
-        //     Container(
-        //       decoration: BoxDecoration(
-        //           color: Colors.white,
-        //           borderRadius: BorderRadiusDirectional.circular(20.0)),
-        //       height: 200,
-        //       width: 200,
-        //     ),
-        //     SizedBox(
-        //       width: 10,
-        //     ),
-        //     Container(
-        //       decoration: BoxDecoration(
-        //           color: Colors.white,
-        //           borderRadius: BorderRadiusDirectional.circular(20.0)),
-        //       height: 200,
-        //       width: 200,
-        //     ),
-        //   ],
-        // ),
-        AspectRatio(
-          aspectRatio: 1,
+        SizedBox(
+          height: 500,
+          width: RESPONSIVE,
           child: GridView.builder(
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: grid_responsive),
             physics: NeverScrollableScrollPhysics(),
             itemCount: listArr.length,
             itemBuilder: (context, index) {

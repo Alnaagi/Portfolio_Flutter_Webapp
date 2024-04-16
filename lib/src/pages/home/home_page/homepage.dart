@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //NavigationbarWidget(),
                 SizedBox(
