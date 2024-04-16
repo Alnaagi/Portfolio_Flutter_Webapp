@@ -1,10 +1,33 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter_webapp/src/pages/home/my_experiences/expirences_widget.dart';
 
 class MyExperiencespage extends StatelessWidget {
-  const MyExperiencespage({super.key});
+  MyExperiencespage({super.key});
 
+  List listArr = [
+    {
+      "title": "CyberSecurity",
+      "subtitle": "Still learning",
+      "image": "assets/kali.png"
+    },
+    {
+      "title": "Prayer - مؤذن",
+      "subtitle": "Mobile App",
+      "image": "assets/flutter.jpeg"
+    },
+    {
+      "title": "LiftLog",
+      "subtitle": "Mobile App",
+      "image": "assets/liftlog1.png"
+    },
+    {
+      "title": "AlHadera",
+      "subtitle": "Mobile App",
+      "image": "assets/alhadera.png"
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -64,12 +87,18 @@ class MyExperiencespage extends StatelessWidget {
         //   ],
         // ),
         AspectRatio(
-          aspectRatio: 1.2,
-          child: ListView.builder(
+          aspectRatio: 1,
+          child: GridView.builder(
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             physics: NeverScrollableScrollPhysics(),
-            itemCount: 1,
+            itemCount: listArr.length,
             itemBuilder: (context, index) {
-              return const MyTile();
+              var obj = listArr[index] as Map? ?? {};
+              return ExpirencesWidget(
+                obj: obj,
+                onPressed: () {},
+              );
             },
           ),
         ),
@@ -111,37 +140,6 @@ class MyTile extends StatelessWidget {
 
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 10,
-          ),
-          child: Container(
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10.0),
-                  child: Image(
-                    image: AssetImage(
-                      'assets/kali.png',
-                    ),
-                  ),
-                ),
-                Text(
-                  "Penetration Testing",
-                  style: TextStyle(
-                      color: Colors.grey.shade100,
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal),
-                ),
-              ],
-            ),
-            height: 80,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Color.fromARGB(255, 117, 98, 224)),
-          ),
-        ),
         Padding(
           padding: const EdgeInsets.only(
             top: 10,
