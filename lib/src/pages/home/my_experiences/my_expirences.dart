@@ -34,33 +34,42 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
       "image": "assets/alhadera.png"
     },
   ];
-  late double RESPONSIVE;
-  double mobile = 450;
-  double Desktop = 500;
 
   @override
   Widget build(BuildContext context) {
     late int grid_responsive = 2;
-    late double RESPONSIVE;
-    double mobile = 450;
-    double Desktop = 750;
+    late double RESPONSIVE_height;
+    late double RESPONSIVE_width;
+    double mobile = 544;
+    double medium = 768;
+    double Desktop = 992;
     double Fullscreen = MediaQuery.of(context).size.width;
     var media = MediaQuery.of(context).size;
     if (media.width > Desktop) {
       setState(() {
         grid_responsive = 4;
-        RESPONSIVE = Fullscreen;
+        RESPONSIVE_height = 200;
+        RESPONSIVE_width = 800;
         print("Fullscreen");
+      });
+    } else if (media.width > medium) {
+      setState(() {
+        grid_responsive = 4;
+        RESPONSIVE_height = 200;
+        RESPONSIVE_width = 750;
+        print("Desktop");
       });
     } else if (media.width > mobile) {
       setState(() {
         grid_responsive = 2;
-        RESPONSIVE = 500;
-        print("Desktop");
+        RESPONSIVE_height = 500;
+        RESPONSIVE_width = 500;
+        print("medium");
       });
     } else if (media.width <= Desktop) {
       setState(() {
-        RESPONSIVE = mobile;
+        RESPONSIVE_height = 400;
+        RESPONSIVE_width = 400;
         print("mobile");
       });
     } else {}
@@ -78,12 +87,13 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
           ),
         ),
         SizedBox(
-          height: 500,
-          width: RESPONSIVE,
+          height: RESPONSIVE_height,
+          width: RESPONSIVE_width,
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: grid_responsive),
             physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
             itemCount: listArr.length,
             itemBuilder: (context, index) {
               var obj = listArr[index] as Map? ?? {};
