@@ -13,7 +13,7 @@ class FooterPage extends StatelessWidget {
           Text(
             'Alnaagi - 2024',
             style: TextStyle(
-                color: Colors.grey.shade500,
+                color: Colors.white70,
                 fontSize: 15,
                 fontWeight: FontWeight.bold),
           )

@@ -1,5 +1,7 @@
 // ignore_for_file: unused_local_variable
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio_flutter_webapp/src/pages/home/my_experiences/expirences_widget.dart';
@@ -73,46 +75,74 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
         print("mobile");
       });
     } else {}
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 10.0, bottom: 5),
-          child: Text(
-            "My Experiences",
-            style: TextStyle(
-                color: Colors.grey.shade200,
-                fontSize: 30,
-                fontWeight: FontWeight.bold),
-          ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(
+          sigmaX: 4,
+          sigmaY: 4,
         ),
-        SizedBox(
-          height: RESPONSIVE_height,
+        child: Container(
           width: RESPONSIVE_width,
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: grid_responsive),
-            physics: NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            itemCount: listArr.length,
-            itemBuilder: (context, index) {
-              var obj = listArr[index] as Map? ?? {};
-              return ExpirencesWidget(
-                obj: obj,
-                onPressed: () {},
-              );
-            },
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            // border:
+            //     Border.symmetric(horizontal: BorderSide(color: Colors.black)),
+
+            boxShadow: [
+              BoxShadow(
+                  blurRadius: 0,
+                  color: Colors.black45,
+                  spreadRadius: 5,
+                  offset: const Offset(2, 4))
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0, bottom: 5),
+                  child: Text(
+                    "My Experiences",
+                    style: TextStyle(
+                        color: Colors.grey.shade200,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(
+                  height: RESPONSIVE_height,
+                  width: RESPONSIVE_width,
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: grid_responsive),
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: listArr.length,
+                    itemBuilder: (context, index) {
+                      var obj = listArr[index] as Map? ?? {};
+                      return ExpirencesWidget(
+                        obj: obj,
+                        onPressed: () {},
+                      );
+                    },
+                  ),
+                ),
+                // Expanded(
+                // child: ListView.builder(
+                //   itemCount: 4,
+                //   itemBuilder: (context, index) {
+                //     return const MyTile();
+                //   },
+                // ),
+                // ),
+              ],
+            ),
           ),
         ),
-        // Expanded(
-        // child: ListView.builder(
-        //   itemCount: 4,
-        //   itemBuilder: (context, index) {
-        //     return const MyTile();
-        //   },
-        // ),
-        // ),
-      ],
+      ),
     );
   }
 }

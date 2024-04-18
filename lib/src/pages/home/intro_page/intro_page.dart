@@ -48,9 +48,23 @@ class _IntroPageState extends State<IntroPage> {
       });
     } else {}
 
-    return SingleChildScrollView(
-      child: SizedBox(
-        width: RESPONSIVE_width,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        // border:
+        //     Border.symmetric(horizontal: BorderSide(color: Colors.black)),
+
+        boxShadow: [
+          BoxShadow(
+              blurRadius: 0,
+              color: Colors.black45,
+              spreadRadius: 5,
+              offset: const Offset(2, 4))
+        ],
+      ),
+      width: RESPONSIVE_width,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -70,7 +84,7 @@ class _IntroPageState extends State<IntroPage> {
                 ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
-                      foregroundColor: Color.fromARGB(255, 65, 55, 111),
+                      foregroundColor: Colors.teal,
                       fixedSize: Size(120, 45),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0))),
@@ -85,8 +99,7 @@ class _IntroPageState extends State<IntroPage> {
                 OutlinedButton.icon(
                   style: OutlinedButton.styleFrom(
                       foregroundColor: Colors.white70,
-                      side:
-                          BorderSide(color: Color.fromARGB(255, 117, 98, 224)),
+                      side: BorderSide(color: Colors.teal),
                       fixedSize: Size(120, 45),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0))),
