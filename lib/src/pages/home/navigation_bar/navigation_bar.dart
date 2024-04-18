@@ -16,15 +16,15 @@ class NavigationbarWidget extends StatelessWidget {
                   color: Colors.indigo.shade300,
                   fontSize: 18,
                   fontWeight: FontWeight.bold)),
-          _NavBarItem('About me'),
-          SizedBox(
+          const _NavBarItem('About me'),
+          const SizedBox(
             width: 18,
           ),
-          _NavBarItem('Projects'),
-          SizedBox(
+          const _NavBarItem('Projects'),
+          const SizedBox(
             width: 18,
           ),
-          _NavBarItem('Contact me'),
+          const _NavBarItem('Contact me'),
         ],
       ),
     );
@@ -39,7 +39,7 @@ class _NavBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: TextStyle(fontSize: 18, color: Colors.white),
+      style: const TextStyle(fontSize: 18, color: Colors.white),
     );
   }
 }

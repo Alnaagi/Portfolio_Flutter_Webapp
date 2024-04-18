@@ -3,11 +3,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:portfolio_flutter_webapp/src/pages/home/my_experiences/expirences_widget.dart';
 
 class MyExperiencespage extends StatefulWidget {
-  MyExperiencespage({super.key});
+  const MyExperiencespage({super.key});
 
   @override
   State<MyExperiencespage> createState() => _MyExperiencespageState();
@@ -39,9 +38,9 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
 
   @override
   Widget build(BuildContext context) {
-    late int grid_responsive = 2;
-    late double RESPONSIVE_height;
-    late double RESPONSIVE_width;
+    late int gridResponsive = 2;
+    late double responsiveHeight;
+    late double responsiveWidth;
     double mobile = 544;
     double medium = 768;
     double Desktop = 992;
@@ -49,30 +48,30 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
     var media = MediaQuery.of(context).size;
     if (media.width > Desktop) {
       setState(() {
-        grid_responsive = 4;
-        RESPONSIVE_height = 200;
-        RESPONSIVE_width = 800;
-        print("Fullscreen");
+        gridResponsive = 4;
+        responsiveHeight = 200;
+        responsiveWidth = 800;
+        // print("Fullscreen");
       });
     } else if (media.width > medium) {
       setState(() {
-        grid_responsive = 4;
-        RESPONSIVE_height = 200;
-        RESPONSIVE_width = 750;
-        print("Desktop");
+        gridResponsive = 4;
+        responsiveHeight = 200;
+        responsiveWidth = 750;
+        // print("Desktop");
       });
     } else if (media.width > mobile) {
       setState(() {
-        grid_responsive = 2;
-        RESPONSIVE_height = 500;
-        RESPONSIVE_width = 500;
-        print("medium");
+        gridResponsive = 2;
+        responsiveHeight = 500;
+        responsiveWidth = 500;
+        // print("medium");
       });
     } else if (media.width <= Desktop) {
       setState(() {
-        RESPONSIVE_height = 400;
-        RESPONSIVE_width = 400;
-        print("mobile");
+        responsiveHeight = 400;
+        responsiveWidth = 400;
+        // print("mobile");
       });
     } else {}
     return ClipRRect(
@@ -83,18 +82,18 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
           sigmaY: 4,
         ),
         child: Container(
-          width: RESPONSIVE_width,
+          width: responsiveWidth,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             // border:
             //     Border.symmetric(horizontal: BorderSide(color: Colors.black)),
 
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                   blurRadius: 0,
                   color: Colors.black45,
                   spreadRadius: 5,
-                  offset: const Offset(2, 4))
+                  offset: Offset(2, 4))
             ],
           ),
           child: Padding(
@@ -113,12 +112,12 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
                   ),
                 ),
                 SizedBox(
-                  height: RESPONSIVE_height,
-                  width: RESPONSIVE_width,
+                  height: responsiveHeight,
+                  width: responsiveWidth,
                   child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: grid_responsive),
-                    physics: NeverScrollableScrollPhysics(),
+                        crossAxisCount: gridResponsive),
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: listArr.length,
                     itemBuilder: (context, index) {
@@ -163,7 +162,7 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
 // }
 
 class MyTile extends StatelessWidget {
-  const MyTile({Key? key}) : super(key: key);
+  const MyTile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -177,10 +176,15 @@ class MyTile extends StatelessWidget {
             top: 10,
           ),
           child: Container(
+            height: 80,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: const Color.fromARGB(255, 117, 98, 224)),
             child: Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(
+                const Padding(
+                  padding: EdgeInsets.only(
                       left: 40.0, top: 10, bottom: 10, right: 38),
                   child: Image(
                     image: AssetImage(
@@ -197,11 +201,6 @@ class MyTile extends StatelessWidget {
                 ),
               ],
             ),
-            height: 80,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Color.fromARGB(255, 117, 98, 224)),
           ),
         ),
         Padding(
@@ -209,10 +208,15 @@ class MyTile extends StatelessWidget {
             top: 10,
           ),
           child: Container(
+            height: 80,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: const Color.fromARGB(255, 117, 98, 224)),
             child: Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(
+                const Padding(
+                  padding: EdgeInsets.only(
                       left: 40.0, top: 10, bottom: 10, right: 38),
                   child: Image(
                     image: AssetImage(
@@ -229,11 +233,6 @@ class MyTile extends StatelessWidget {
                 ),
               ],
             ),
-            height: 80,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Color.fromARGB(255, 117, 98, 224)),
           ),
         ),
         // Padding(

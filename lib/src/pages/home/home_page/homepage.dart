@@ -6,29 +6,24 @@ import 'package:portfolio_flutter_webapp/src/pages/home/footer/footer.dart';
 import 'package:portfolio_flutter_webapp/src/pages/home/intro_page/intro_page.dart';
 import 'package:portfolio_flutter_webapp/src/pages/home/my_experiences/my_expirences.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
   Widget build(BuildContext context) {
+    precacheImage(const AssetImage("assets/10.jpg"), context);
     ImageProvider logo = const AssetImage("assets/10.jpg");
     var media = MediaQuery.of(context).size;
-    if (media.width > 500) {
-      setState(() {});
-    }
+
     return Scaffold(
+      extendBody: true,
       // resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromARGB(255, 26, 26, 41),
+      backgroundColor: Colors.transparent,
       body: Container(
         height: media.height,
         width: media.width,
         decoration: BoxDecoration(
-          image: DecorationImage(image: logo, fit: BoxFit.fill),
+          image: DecorationImage(image: logo, fit: BoxFit.cover),
         ),
         child: ClipRRect(
           child: BackdropFilter(
@@ -36,11 +31,11 @@ class _HomePageState extends State<HomePage> {
               sigmaX: 4,
               sigmaY: 4,
             ),
-            child: SafeArea(
+            child: const SafeArea(
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [

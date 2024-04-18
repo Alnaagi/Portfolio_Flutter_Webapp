@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_webapp/src/pages/home/my_experiences/my_expirences.dart';
 
 class AboutMePage extends StatefulWidget {
   const AboutMePage({super.key});
@@ -13,40 +12,40 @@ class AboutMePage extends StatefulWidget {
 class _AboutMePageState extends State<AboutMePage> {
   @override
   Widget build(BuildContext context) {
-    late int grid_responsive = 2;
-    late double RESPONSIVE_height;
-    late double RESPONSIVE_width;
+    // late int gridResponsive = 2;
+    // late double responsiveHeight;
+    late double responsiveWidth;
     double mobile = 544;
     double medium = 768;
     double Desktop = 992;
-    double Fullscreen = MediaQuery.of(context).size.width;
+    // double Fullscreen = MediaQuery.of(context).size.width;
     var media = MediaQuery.of(context).size;
     if (media.width > Desktop) {
       setState(() {
-        grid_responsive = 4;
-        RESPONSIVE_height = 200;
-        RESPONSIVE_width = 800;
-        print("Fullscreen");
+        // gridResponsive = 4;
+        // responsiveHeight = 200;
+        responsiveWidth = 800;
+        // print("Fullscreen");
       });
     } else if (media.width > medium) {
       setState(() {
-        grid_responsive = 4;
-        RESPONSIVE_height = 200;
-        RESPONSIVE_width = 750;
-        print("Desktop");
+        // gridResponsive = 4;
+        // responsiveHeight = 200;
+        responsiveWidth = 750;
+        // print("Desktop");
       });
     } else if (media.width > mobile) {
       setState(() {
-        grid_responsive = 2;
-        RESPONSIVE_height = 500;
-        RESPONSIVE_width = 500;
-        print("medium");
+        // gridResponsive = 2;
+        // responsiveHeight = 500;
+        responsiveWidth = 500;
+        // print("medium");
       });
     } else if (media.width <= Desktop) {
       setState(() {
-        RESPONSIVE_height = 400;
-        RESPONSIVE_width = 400;
-        print("mobile");
+        // responsiveHeight = 400;
+        responsiveWidth = 400;
+        // print("mobile");
       });
     } else {}
     return Padding(
@@ -64,21 +63,21 @@ class _AboutMePageState extends State<AboutMePage> {
               // border:
               //     Border.symmetric(horizontal: BorderSide(color: Colors.black)),
 
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                     blurRadius: 0,
                     color: Colors.black45,
                     spreadRadius: 5,
-                    offset: const Offset(2, 4))
+                    offset: Offset(2, 4))
               ],
             ),
-            width: RESPONSIVE_width,
+            width: responsiveWidth,
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
+              padding: const EdgeInsets.only(bottom: 20, left: 20, right: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(

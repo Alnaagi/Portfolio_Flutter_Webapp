@@ -16,7 +16,7 @@ class ExpirencesWidget extends StatelessWidget {
           decoration: BoxDecoration(
               // color: Colors.yellow,
               borderRadius: BorderRadius.circular(15),
-              boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 1)]),
+              boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 1)]),
           child: Stack(
             alignment: Alignment.bottomLeft,
             children: [
@@ -30,11 +30,11 @@ class ExpirencesWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(right: 25),
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                margin: const EdgeInsets.only(right: 25),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 width: double.maxFinite,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(30),
                     bottomLeft: Radius.circular(15),
                   ),
@@ -46,7 +46,7 @@ class ExpirencesWidget extends StatelessWidget {
                     Text(
                       obj["title"],
                       maxLines: 1,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.black,
                           fontSize: 15,
                           fontWeight: FontWeight.w600),
@@ -54,7 +54,7 @@ class ExpirencesWidget extends StatelessWidget {
                     Text(
                       obj["subtitle"],
                       maxLines: 1,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 12,
                       ),
