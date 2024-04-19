@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter_webapp/src/pages/home/my_experiences/expirences_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class MyExperiencespage extends StatefulWidget {
   const MyExperiencespage({super.key});
@@ -130,7 +131,7 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
                       InkWell(
                         borderRadius: BorderRadius.circular(15),
                         onTap: () {
-                          launch('https://github.com/Alnaagi');
+                          launchUrlString('https://github.com/Alnaagi');
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(6.0),
@@ -196,7 +197,7 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
                       InkWell(
                         borderRadius: BorderRadius.circular(15),
                         onTap: () {
-                          launch('https://github.com/Alnaagi/prayer');
+                          launchUrlString('https://github.com/Alnaagi/prayer');
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(6.0),
@@ -262,7 +263,7 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
                       InkWell(
                         borderRadius: BorderRadius.circular(15),
                         onTap: () {
-                          launch('https://github.com/Alnaagi/liftlog');
+                          launchUrlString('https://github.com/Alnaagi/liftlog');
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(6.0),
@@ -328,7 +329,8 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
                       InkWell(
                         borderRadius: BorderRadius.circular(15),
                         onTap: () {
-                          launch('https://github.com/Alnaagi/Alhadera');
+                          launchUrlString(
+                              'https://github.com/Alnaagi/Alhadera');
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(6.0),
