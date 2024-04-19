@@ -13,31 +13,31 @@ class MyExperiencespage extends StatefulWidget {
 }
 
 class _MyExperiencespageState extends State<MyExperiencespage> {
-  List listArr = [
-    {
-      "title": "CyberSecurity",
-      "subtitle": "Still learning",
-      "image": "assets/kali.png"
-    },
-    {
-      "title": "Prayer - مؤذن",
-      "subtitle": "Mobile App",
-      "image": "assets/flutter.jpeg"
-    },
-    {
-      "title": "LiftLog",
-      "subtitle": "Mobile App",
-      "image": "assets/liftlog1.png"
-    },
-    {
-      "title": "AlHadera",
-      "subtitle": "Mobile App",
-      "image": "assets/alhadera.png"
-    },
-  ];
-
   @override
   Widget build(BuildContext context) {
+    List listArr = [
+      {
+        "title": "CyberSecurity",
+        "subtitle": "Still learning",
+        "image": "assets/kali.png",
+      },
+      {
+        "title": "Prayer - مؤذن",
+        "subtitle": "Mobile App",
+        "image": "assets/flutter.jpeg"
+      },
+      {
+        "title": "LiftLog",
+        "subtitle": "Mobile App",
+        "image": "assets/liftlog1.png"
+      },
+      {
+        "title": "AlHadera",
+        "subtitle": "Mobile App",
+        "image": "assets/alhadera.png"
+      },
+    ];
+
     late int gridResponsive = 2;
     late double responsiveHeight;
     late double responsiveWidth;
@@ -122,9 +122,12 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
                     itemCount: listArr.length,
                     itemBuilder: (context, index) {
                       var obj = listArr[index] as Map? ?? {};
+                      var tap = listArr[index] as Map? ?? {};
                       return ExpirencesWidget(
                         obj: obj,
-                        onPressed: () {},
+                        onPressed: () {
+                          tap;
+                        },
                       );
                     },
                   ),

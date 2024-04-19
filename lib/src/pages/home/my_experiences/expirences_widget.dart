@@ -9,14 +9,16 @@ class ExpirencesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(15),
-      onTap: onPressed,
+      onTap: () {},
       child: Padding(
         padding: const EdgeInsets.all(6.0),
         child: Container(
           decoration: BoxDecoration(
               // color: Colors.yellow,
               borderRadius: BorderRadius.circular(15),
-              boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 1)]),
+              boxShadow: const [
+                BoxShadow(color: Colors.black12, blurRadius: 1)
+              ]),
           child: Stack(
             alignment: Alignment.bottomLeft,
             children: [
