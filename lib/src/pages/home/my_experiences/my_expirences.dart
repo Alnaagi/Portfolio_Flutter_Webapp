@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter_webapp/src/pages/home/my_experiences/expirences_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyExperiencespage extends StatefulWidget {
   const MyExperiencespage({super.key});
@@ -15,28 +16,34 @@ class MyExperiencespage extends StatefulWidget {
 class _MyExperiencespageState extends State<MyExperiencespage> {
   @override
   Widget build(BuildContext context) {
-    List listArr = [
-      {
-        "title": "CyberSecurity",
-        "subtitle": "Still learning",
-        "image": "assets/kali.png",
-      },
-      {
-        "title": "Prayer - مؤذن",
-        "subtitle": "Mobile App",
-        "image": "assets/flutter.jpeg"
-      },
-      {
-        "title": "LiftLog",
-        "subtitle": "Mobile App",
-        "image": "assets/liftlog1.png"
-      },
-      {
-        "title": "AlHadera",
-        "subtitle": "Mobile App",
-        "image": "assets/alhadera.png"
-      },
-    ];
+    // List listArr = [
+    //   {
+    //     "title": "CyberSecurity",
+    //     "subtitle": "Still learning",
+    //     "image": "assets/kali.png",
+    //   },
+    //   {
+    //     "title": "Prayer - مؤذن",
+    //     "subtitle": "Mobile App",
+    //     "image": "assets/flutter.jpeg"
+    //   },
+    //   {
+    //     "title": "LiftLog",
+    //     "subtitle": "Mobile App",
+    //     "image": "assets/liftlog1.png"
+    //   },
+    //   {
+    //     "title": "AlHadera",
+    //     "subtitle": "Mobile App",
+    //     "image": "assets/alhadera.png"
+    //   },
+    // ];
+    // List<void> listArr_ontap = [
+    //   print("object"),
+    //   print("object2"),
+    //   print("object3"),
+    //   print("object4"),
+    // ];
 
     late int gridResponsive = 2;
     late double responsiveHeight;
@@ -114,22 +121,277 @@ class _MyExperiencespageState extends State<MyExperiencespage> {
                 SizedBox(
                   height: responsiveHeight,
                   width: responsiveWidth,
-                  child: GridView.builder(
+                  child: GridView(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: gridResponsive),
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount: listArr.length,
-                    itemBuilder: (context, index) {
-                      var obj = listArr[index] as Map? ?? {};
-                      var tap = listArr[index] as Map? ?? {};
-                      return ExpirencesWidget(
-                        obj: obj,
-                        onPressed: () {
-                          tap;
+                    children: [
+                      InkWell(
+                        borderRadius: BorderRadius.circular(15),
+                        onTap: () {
+                          launch('https://github.com/Alnaagi');
                         },
-                      );
-                    },
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                // color: Colors.yellow,
+                                borderRadius: BorderRadius.circular(15),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black12, blurRadius: 1)
+                                ]),
+                            child: Stack(
+                              alignment: Alignment.bottomLeft,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.asset(
+                                    "assets/kali.png",
+                                    width: double.maxFinite,
+                                    height: double.maxFinite,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 25),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  width: double.maxFinite,
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.only(
+                                      topRight: Radius.circular(30),
+                                      bottomLeft: Radius.circular(15),
+                                    ),
+                                    color: Colors.yellow.shade600,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        "CyberSecurity",
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      Text(
+                                        "Still learning",
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        borderRadius: BorderRadius.circular(15),
+                        onTap: () {
+                          launch('https://github.com/Alnaagi/prayer');
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                // color: Colors.yellow,
+                                borderRadius: BorderRadius.circular(15),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black12, blurRadius: 1)
+                                ]),
+                            child: Stack(
+                              alignment: Alignment.bottomLeft,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.asset(
+                                    "assets/flutter.jpeg",
+                                    width: double.maxFinite,
+                                    height: double.maxFinite,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 25),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  width: double.maxFinite,
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.only(
+                                      topRight: Radius.circular(30),
+                                      bottomLeft: Radius.circular(15),
+                                    ),
+                                    color: Colors.yellow.shade600,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        "Prayer - مؤذن",
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      Text(
+                                        "Mobile App",
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        borderRadius: BorderRadius.circular(15),
+                        onTap: () {
+                          launch('https://github.com/Alnaagi/liftlog');
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                // color: Colors.yellow,
+                                borderRadius: BorderRadius.circular(15),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black12, blurRadius: 1)
+                                ]),
+                            child: Stack(
+                              alignment: Alignment.bottomLeft,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.asset(
+                                    "assets/liftlog1.png",
+                                    width: double.maxFinite,
+                                    height: double.maxFinite,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 25),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  width: double.maxFinite,
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.only(
+                                      topRight: Radius.circular(30),
+                                      bottomLeft: Radius.circular(15),
+                                    ),
+                                    color: Colors.yellow.shade600,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        "LiftLog",
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      Text(
+                                        "Mobile App",
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        borderRadius: BorderRadius.circular(15),
+                        onTap: () {
+                          launch('https://github.com/Alnaagi/Alhadera');
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                // color: Colors.yellow,
+                                borderRadius: BorderRadius.circular(15),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black12, blurRadius: 1)
+                                ]),
+                            child: Stack(
+                              alignment: Alignment.bottomLeft,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.asset(
+                                    "assets/alhadera.png",
+                                    width: double.maxFinite,
+                                    height: double.maxFinite,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(right: 25),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  width: double.maxFinite,
+                                  decoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.only(
+                                      topRight: Radius.circular(30),
+                                      bottomLeft: Radius.circular(15),
+                                    ),
+                                    color: Colors.yellow.shade600,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Text(
+                                        "AlHadera",
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      Text(
+                                        "Mobile App",
+                                        maxLines: 1,
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 // Expanded(
@@ -273,3 +535,15 @@ class MyTile extends StatelessWidget {
     );
   }
 }
+
+// List<void> listArr_ontap = [
+//   print("object"),
+//   print("object2"),
+//   print("object3"),
+//   print("object4"),
+// ];
+// selected(BuildContext context, index) {
+//   var ontap = listArr_ontap[index];
+//   print("${listArr_ontap.toString()} hello");
+//   ontap;
+// }
