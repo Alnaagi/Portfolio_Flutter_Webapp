@@ -2,6 +2,8 @@
 
 A Flutter web app showcasing my creative coding skills
 
+![Gif](images/gif2.gif)
+
 **View the live portfolio: [Alnaagi.ly](https://portfolio-flutter-webapp.web.app/)**
 
 ## About
